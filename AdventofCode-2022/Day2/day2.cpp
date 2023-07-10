@@ -1,3 +1,5 @@
+#include "day2.hpp"
+
 #include <iostream>
 
 // A and X is rock      1
@@ -53,7 +55,8 @@ int puzzle(char *file_location, int (*function)(char, char)) {
     int c;
     char p1 = 0;
     char p2 = 0;
-    FILE *input = fopen(file_location, "r");
+    FILE* input;
+    fopen_s(&input, file_location, "r");
     if (input == NULL) {
         return 1;
     } else {
@@ -76,14 +79,14 @@ int puzzle(char *file_location, int (*function)(char, char)) {
     return 0;
 }
 
-int main() {
-    if (puzzle((char *)"puzzle_input_test.txt", &calculate_score) == 1) {
+int day2() {
+    if (puzzle((char *)"Day2/puzzle_input_test.txt", &calculate_score) == 1) {
         printf("error");
     }
-    if (puzzle((char *)"puzzle_input.txt", &calculate_score) == 1) {
+    if (puzzle((char *)"Day2/puzzle_input.txt", &calculate_score) == 1) {
         printf("error");
     }
-    if (puzzle((char *)"puzzle_input.txt", &calculate_score2) == 1) {
+    if (puzzle((char *)"Day2/puzzle_input.txt", &calculate_score2) == 1) {
         printf("error");
     }
     return 0;

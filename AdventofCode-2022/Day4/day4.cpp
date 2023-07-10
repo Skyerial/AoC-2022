@@ -1,3 +1,5 @@
+#include "day4.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -82,16 +84,19 @@ void read_input(std::string file, int (*function)(std::string, std::string)) {
     printf("Amount of assignments with full overlap: %d\n", result);
 }
 
-int main(int argc, char *argv[]) {
+void day4(usecase4 uc) {
     auto start = std::chrono::high_resolution_clock::now();
-    if ((std::string)argv[1] == "test") {
-        read_input("test.txt", &any_overlap);
+    if (uc == 0) 
+    {
+        read_input("Day4/test.txt", &any_overlap);
     }
-    if ((std::string)argv[1] == "p1") {
-        read_input("input.txt", &test);
+    else if (uc == 1) 
+    {
+        read_input("Day4/input.txt", &test);
     }
-    if ((std::string)argv[1] == "p2") {
-        read_input("input.txt", &any_overlap);
+    else if (uc == 2) 
+    {
+        read_input("Day4/input.txt", &any_overlap);
     }
 
     auto stop = std::chrono::high_resolution_clock::now();
@@ -99,5 +104,4 @@ int main(int argc, char *argv[]) {
                                                                 (stop - start);
 
     std::cout << "Done in: " << duration.count() << " ms" << std::endl;
-    return 0;
 }

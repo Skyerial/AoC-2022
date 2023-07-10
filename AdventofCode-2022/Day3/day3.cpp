@@ -1,7 +1,10 @@
+#include "day3.hpp"
+
+#include <string.h>
+
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <string.h>
 #include <vector>
 #include <chrono>
 #include <algorithm>
@@ -99,14 +102,19 @@ int test(const char *file, bool halved_string) {
     return 0;
 }
 
-int main(int argc, char *argv[]) {
+int day3(usecase3 uc) {
     auto start = std::chrono::high_resolution_clock::now();
-    if (strcmp(argv[1], "test") == 0) {
-        if (test("test.txt", true) == 1) { return 1; }
-    } else if (strcmp(argv[1], "p1") == 0) {
-        if (test("input.txt", true) == 1) { return 1; }
-    } else if (strcmp(argv[1], "p2") == 0) {
-        if (test("input.txt", false) == 1) { return 1; }
+    if (uc == 0) 
+    {
+        if (test("Day3/test.txt", true) == 1) { return 1; }
+    } 
+    else if (uc == 1) 
+    {
+        if (test("Day3/input.txt", true) == 1) { return 1; }
+    } 
+    else if (uc == 2)
+    {
+        if (test("Day3/input.txt", false) == 1) { return 1; }
     }
 
     auto stop = std::chrono::high_resolution_clock::now();

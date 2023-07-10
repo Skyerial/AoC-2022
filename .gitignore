@@ -1,5 +1,5 @@
 # ignore all vscode
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -7,3 +7,10 @@
 
 # ignore all .exe
 *.exe
+
+# ignore all .txt
+*.txt
+
+# ignore some visual studio stuff
+*.vs
+x64/
