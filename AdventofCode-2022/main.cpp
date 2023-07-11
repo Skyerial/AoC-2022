@@ -3,8 +3,9 @@
 #include "Day3/day3.hpp"
 #include "Day4/day4.hpp"
 #include "Day5/day5.hpp"
+#include "Day6/day6.hpp"
 
 int main()
 {
-	day5();
+	Day6(k6Part2);
 }
